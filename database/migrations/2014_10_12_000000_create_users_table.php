@@ -21,6 +21,20 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('exam_user', function (Blueprint $table) {
+            $table->integer('exam_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('kind');
+            $table->timestamps();
+        });
+
+        Schema::create('bank_user', function (Blueprint $table) {
+            $table->integer('bank_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('kind');
+            $table->timestamps();
+        });
     }
 
     /**

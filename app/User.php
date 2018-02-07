@@ -7,6 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    public function banks()
+    {
+        return $this->hasMany(Bank::class);
+    }
+
+    public function exams(){
+        return $this->hasMany(Exam::class);
+    }
+
     use Notifiable;
 
     /**
