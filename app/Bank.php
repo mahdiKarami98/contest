@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bank extends Model
 {
-    public function banks()
+    public function questions()
     {
         return $this->hasMany(Question::class);
     }

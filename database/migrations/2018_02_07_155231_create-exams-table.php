@@ -19,25 +19,6 @@ class CreateExamsTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
-
-        Schema::create('exam_question', function (Blueprint $table) {
-            $table->integer('question_id')->unsigned()->index();
-            $table->integer('exam_id')->unsigned()->index();
-            $table->timestamps();
-        });
-
-        Schema::create('exam_question_user', function (Blueprint $table) {
-            $table->integer('question_id')->unsigned()->index();
-            $table->integer('exam_id')->unsigned()->index();
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('numberOfPermissionToSolve')->unsigned();
-            $table->integer('numberOfSolve')->unsigned();
-            $table->integer('maxOfScore')->unsigned();
-            $table->integer('acceptedScore')->unsigned();
-            $table->boolean('solved')->unsigned();
-            $table->timestamps();
-        });
-
     }
 
     /**

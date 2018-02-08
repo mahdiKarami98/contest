@@ -16,6 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
+            $table->integer('bank_id')->unsigned()->index()->nullable();
             $table->string('title');
             $table->string('description_solution')->nullable ();
             $table->boolean('available');
