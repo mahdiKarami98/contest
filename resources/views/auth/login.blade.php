@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-8 col-10 my-3">
+            <div class="card">
+                <div class="card-header bg-primary text-white"><h5>Login</h5></div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-6">E-Mail Address</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 align-self-center justify-content-center">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
